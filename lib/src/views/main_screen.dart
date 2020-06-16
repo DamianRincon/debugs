@@ -30,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 2.5;
     final double itemWidth = size.width;
 
     return Theme(
@@ -50,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
           Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 25, left: 20, right: 20),
+                padding: EdgeInsets.only(top: 35, left: 20, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -125,7 +125,7 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            Image.asset(items[index].url, width: 100, color: theme.appBarTheme.actionsIconTheme.color),
+                            Image.asset(items[index].url, width: 80, color: theme.appBarTheme.actionsIconTheme.color),
                             Text(
                               items[index].name,
                               style: TextStyle(
