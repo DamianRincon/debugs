@@ -10,9 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  hive: ^1.4.1+1
   provider: ^4.0.4
-  hive_flutter: ^0.2.1
+  hive:
+  hive_flutter:
   path_provider: ^1.6.10
   cupertino_icons: ^0.1.3
 

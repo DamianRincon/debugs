@@ -17,20 +17,21 @@ Future<void> main() async {
   ));
 
   var dir = await getApplicationDocumentsDirectory();
-  await Hive.initFlutter(dir.path);
-  await Hive.openBox('app');
-  var appBox = Hive.box("app");
+  //await Hive.initFlutter(dir.path);
+  //await Hive.openBox('app');
+  //var appBox = Hive.box("app");
 
   runApp(
     MultiProvider(
       providers: [
-         ChangeNotifierProvider(create: (_) => App(appBox)),
+        ChangeNotifierProvider(create: (_) => App()),
       ],
       child: MaterialApp(
         title: "Debug",
           debugShowCheckedModeBanner: false,
           onGenerateRoute: RouteGenerate.initialize,
-          initialRoute: appBox.get("page", defaultValue: '/login'),
+          initialRoute: '/login',
+          //initialRoute: appBox.get("page", defaultValue: '/login'),
       )
     )
   );

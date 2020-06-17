@@ -8,10 +8,13 @@ class CustomField extends StatelessWidget {
   final bool filled;
   final Widget icon;
   final Widget prefix;
+  final Widget prefixIcon;
+  final Widget suffixIcon;
   final bool dense;
   final double borderRadius;
   final FocusNode node;
   final Color helperColor;
+  final Color fillColor;
   final TextInputAction actionNode;
   final Function onComplete, validator, onSubmit, onSaved, onChange;
 
@@ -23,6 +26,9 @@ class CustomField extends StatelessWidget {
     this.label = "",
     this.filled,
     this.icon,
+    this.fillColor,
+    this.prefixIcon,
+    this.suffixIcon,
     this.validator,
     this.prefix,
     this.dense = false,
@@ -53,7 +59,10 @@ class CustomField extends StatelessWidget {
         helperText: helper,
         labelText: label,
         filled: filled,
+        fillColor: fillColor,
+        suffixIcon: suffixIcon,
         prefix: prefix,
+        prefixIcon: prefixIcon,
         icon: icon,
         isDense: dense,
         helperStyle: TextStyle(

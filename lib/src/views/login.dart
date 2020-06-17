@@ -164,7 +164,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                 title: "Bienvenido de nuevo",
                 description: "Inicia sesión con tu correo y la contraseña asignada."
               ),
-              SizedBox(height: 145),
+              SizedBox(height: 100),
 
               Form(
                 key: _formKey,
@@ -218,7 +218,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                         )
                       ),
 
-                      SizedBox(height: 35),
+                      SizedBox(height: 20),
 
                       FadeSlideTransition(
                         animation: _formElementAnimation,
@@ -234,7 +234,6 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                               /*if (_formKey.currentState.validate()) {
 
                               }*/
-
                             },
                             child: Container(
                               height: 55,
