@@ -43,6 +43,12 @@ class _ProspectScreenState extends State<ProspectScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Prospectos"),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.contact_phone), 
+              onPressed: (){}
+            )
+          ],
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: ()=> Navigator.pushNamed(context, '/new_prospect'),

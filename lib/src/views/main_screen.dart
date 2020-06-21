@@ -13,13 +13,13 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   List<Item> items = [
     Item("assets/prospectos.png","Prospectos","/prospect"),
-    Item("assets/contactos.png","Contactos",""),
-    Item("assets/agenda.png","Agenda",""),
-    Item("assets/citas.png","Citas",""),
-    Item("assets/solicitudes.png","Solicitudes",""),
-    Item("assets/clientes.png","Clientes",""), 
-    Item("assets/monitores.png","Monitores",""),
-    Item("assets/capacitación.png","Capacitación","")
+    Item("assets/contactos.png","Contactos","/contactos"),
+    Item("assets/agenda.png","Agenda","/agenda"),
+    Item("assets/citas.png","Citas","/citas"),
+    Item("assets/solicitudes.png","Solicitudes","/solicitudes"),
+    Item("assets/clientes.png","Clientes","/clientes"), 
+    Item("assets/monitores.png","Monitores","/monitores"),
+    Item("assets/capacitación.png","Capacitación","/capacitacion")
   ];
 
   @override
