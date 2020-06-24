@@ -19,6 +19,9 @@ class _SolicitudState extends State<Solicitud> {
         appBar: AppBar(
           title: Text("Solicitudes")
         ),
+        body: Center(
+          child: Text("Sin solicitudes", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35, color: Colors.grey[400])),
+        ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: ()=> Navigator.pushNamed(context, '/new_solicitud'),
           label: Text("Nuevo"),

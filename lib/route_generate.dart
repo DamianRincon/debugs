@@ -1,3 +1,4 @@
+import 'package:Debug/src/views/citas.dart';
 import 'package:flutter/material.dart';
 
 import 'src/views/login.dart';
@@ -18,6 +19,7 @@ class RouteGenerate {
       case '/prospect' : return MaterialPageRoute(builder: (c) => ProspectScreen());
       case '/new_prospect' : return MaterialPageRoute(builder: (c) => NuevoProstecto());
       case '/agenda' : return MaterialPageRoute(builder: (c) => Agenda());
+      case '/citas' : return MaterialPageRoute(builder: (c) => Citas());
       case '/new_cita' : return MaterialPageRoute(builder: (c) => NuevaCita());
       case '/solicitudes' : return MaterialPageRoute(builder: (c) => Solicitud());
       case '/new_solicitud' : return MaterialPageRoute(builder: (c) => NewSolicitud());

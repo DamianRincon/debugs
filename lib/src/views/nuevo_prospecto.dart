@@ -47,7 +47,7 @@ class _NuevoProstectoState extends State<NuevoProstecto> {
                   Text("Tipo", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                   SizedBox(height: 5),
                   DropdownButtonFormField(
-                    items: ["Mercado Natural","Referido","Centro de Influencia"].map((String category) {
+                    items: ["Referido","Centro de Influencia"].map((String category) {
                       return DropdownMenuItem(
                         value: category,
                         child: Row(
@@ -58,7 +58,7 @@ class _NuevoProstectoState extends State<NuevoProstecto> {
                       );
                     }).toList(),
                     onChanged: (newValue) {},
-                    value: "Mercado Natural",
+                    value: "Referido",
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5)

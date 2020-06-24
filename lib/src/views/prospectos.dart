@@ -1,7 +1,9 @@
 import 'package:Debug/src/providers/app.dart';
 import 'package:flutter/material.dart';
 import 'package:Debug/src/widgets/clip.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_contact_picker/easy_contact_picker.dart';
 
 class ProspectScreen extends StatefulWidget {
   ProspectScreen({Key key}) : super(key: key);
@@ -10,11 +12,18 @@ class ProspectScreen extends StatefulWidget {
   _ProspectScreenState createState() => _ProspectScreenState();
 }
 
-class _ProspectScreenState extends State<ProspectScreen> {
+class _ProspectScreenState extends State<ProspectScreen> with AutomaticKeepAliveClientMixin{
   List<String> items = List<String>();
   TextEditingController controller = new TextEditingController();
   String filter;
+  bool c = false;
+  List<Contact> _list = new List();
+  final EasyContactPicker _contactPicker = new EasyContactPicker();
 
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+  
   @override
   initState() {
     items.add("Juan Hernandes");
@@ -35,6 +44,34 @@ class _ProspectScreenState extends State<ProspectScreen> {
     super.dispose();
   }
 
+  _openAddressBook() async{
+    Map<PermissionGroup, PermissionStatus> permissions = await PermissionHandler().requestPermissions([PermissionGroup.contacts]);
+    PermissionStatus permission = await PermissionHandler().checkPermissionStatus(PermissionGroup.contacts);
+    if (permission == PermissionStatus.granted){
+      _getContactData();
+    }
+
+  }
+
+  _getContactData() async{
+    List<Contact> list = await _contactPicker.selectContacts();
+    setState(() {
+      _list = list;
+    });
+  }
+
+   Widget _getItemWithIndex(Contact contact){
+    return ListTile(
+      title: Text(contact.fullName),
+      subtitle: Text(contact.phoneNumber),
+      leading: CircleAvatar(
+        backgroundColor: Colors.blue,
+        child: Center(child: Text(contact.fullName[0], style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     App app = Provider.of<App>(context);
@@ -46,7 +83,12 @@ class _ProspectScreenState extends State<ProspectScreen> {
           actions: [
             IconButton(
               icon: Icon(Icons.contact_phone), 
-              onPressed: (){}
+              onPressed: () async {
+               _openAddressBook();
+               setState(() {
+                 c = true;
+               });
+              }
             )
           ],
         ),
@@ -87,7 +129,12 @@ class _ProspectScreenState extends State<ProspectScreen> {
                   )
                 ),
                 Expanded(
-                  child: ListView.builder(
+                  child: c ? ListView.builder(
+        itemBuilder: (context, index){
+          return _getItemWithIndex(_list[index]);
+        },
+        itemCount: _list.length,
+      ): ListView.builder(
                     itemCount: items.length,
                     itemBuilder: (BuildContext context, int index) {
                       return filter == null || filter == "" ? 
