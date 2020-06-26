@@ -19,10 +19,6 @@ class _ProspectScreenState extends State<ProspectScreen> with AutomaticKeepAlive
   bool c = false;
   List<Contact> _list = new List();
   final EasyContactPicker _contactPicker = new EasyContactPicker();
-
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
   
   @override
   initState() {
@@ -130,11 +126,11 @@ class _ProspectScreenState extends State<ProspectScreen> with AutomaticKeepAlive
                 ),
                 Expanded(
                   child: c ? ListView.builder(
-        itemBuilder: (context, index){
-          return _getItemWithIndex(_list[index]);
-        },
-        itemCount: _list.length,
-      ): ListView.builder(
+                  itemBuilder: (context, index){
+                    return _getItemWithIndex(_list[index]);
+                  },
+                  itemCount: _list.length,
+                ): ListView.builder(
                     itemCount: items.length,
                     itemBuilder: (BuildContext context, int index) {
                       return filter == null || filter == "" ? 
@@ -150,7 +146,7 @@ class _ProspectScreenState extends State<ProspectScreen> with AutomaticKeepAlive
                         ),
                         title: Text(items[index]),
                       ) : new Container();
-                    },
+                    }
                   )
                 )
               ]
@@ -160,4 +156,7 @@ class _ProspectScreenState extends State<ProspectScreen> with AutomaticKeepAlive
       )
     );
   }
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

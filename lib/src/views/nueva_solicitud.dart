@@ -4,8 +4,7 @@ import 'package:Debug/src/providers/app.dart';
 import 'package:Debug/src/widgets/clip.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:image_picker/image_picker.dart'; // For Image Picker    
-import 'package:path/path.dart' as Path;
+import 'package:image_picker/image_picker.dart';
 
 class NewSolicitud extends StatefulWidget {
   NewSolicitud({Key key}) : super(key: key);
@@ -15,14 +14,23 @@ class NewSolicitud extends StatefulWidget {
 }
 
 class _NewSolicitudState extends State<NewSolicitud> {
-  File _image;
+  List<File> _images = List<File>();
+  int _index = 0;
   final picker = ImagePicker();
+
+  @override
+  void initState() { 
+    _images.add(null);
+    super.initState();
+  }
 
   Future getImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
 
     setState(() {
-      _image = File(pickedFile.path);
+      _images[_index] = File(pickedFile.path);
+      _index++;
+      _images.add(null);
     });
   }
 
@@ -54,8 +62,8 @@ class _NewSolicitudState extends State<NewSolicitud> {
               left: -50,
               child: ClipCustom()
             ),
-            SingleChildScrollView(
-              padding: EdgeInsets.only(top: 10, left: 16, right: 16),
+            Padding(
+              padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,22 +93,32 @@ class _NewSolicitudState extends State<NewSolicitud> {
                     )
                   ),
                   SizedBox(height: 15),
-                  Card(
-                    child: _image == null ? InkWell(
-                      onTap: getImage,
-                      child: Container(
-                        height: 250,
-                        width: size.width,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(Icons.camera, size: 70, color: Colors.grey[600]),
-                            Text("Tomar foto", style: TextStyle(fontSize: 30))
-                          ]
-                        )
-                      )
-                    ) : Image.file(_image, height: 250, width: size.width,),
+                  
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: _images.length,
+                      itemBuilder: (c,i){
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 15),
+                          child: Card(
+                          child: _images[i] == null ? InkWell(
+                            onTap: getImage,
+                            child: Container(
+                              height: 250,
+                              width: size.width,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.camera, size: 70, color: Colors.grey[600]),
+                                  Text("Tomar foto", style: TextStyle(fontSize: 30))
+                                ]
+                              )
+                            )
+                          ) : Image.file(_images[i], fit: BoxFit.cover),
+                        ),
+                      );
+                    })
                   )
                 ]
               )

@@ -48,7 +48,12 @@ class _MainScreenState extends State<MainScreen> {
               icon: Icon(Icons.more_vert),
               onPressed: ()=> showModalBottomSheet(
                 context: context,
-                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)
+                  )
+                ),
                 builder: (c){
                   return Container(
                     height: 120,

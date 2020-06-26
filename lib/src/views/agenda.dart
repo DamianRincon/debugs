@@ -85,9 +85,44 @@ class _AgendaState extends State<Agenda> {
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                          right: -45,
+                          right: 10,
                           top: 10,
-                          child: Icon(Icons.mic, color: Colors.white, size: 100),
+                          child: IconButton(
+                            icon: Icon(Icons.mic, color: Colors.white, size: 35),
+                            onPressed: ()=> showModalBottomSheet(
+                              context: context,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10)
+                                )
+                              ),
+                              builder: (c){
+                                return Container(
+                                  height: 120,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: EdgeInsets.only(top: 10, left: 10),
+                                        child: Text("¿Desea inciar la grabación?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                        children: <Widget>[
+                                          FlatButton(onPressed: ()=> Navigator.pop(context), child: Text("No por ahora")),
+                                          FlatButton(onPressed: ()=> Navigator.pop(context), child: Text("Sí"))
+                                          
+                                        ],
+                                      )
+                                    ]
+                                  )
+                                );
+                              }
+                            )
+                          )
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 15.0),
@@ -102,7 +137,39 @@ class _AgendaState extends State<Agenda> {
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: <Widget>[
                                   FlatButton(
-                                    onPressed: (){}, 
+                                    onPressed: ()=> showModalBottomSheet(
+                                      context: context,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10)
+                                        )
+                                      ),
+                                      builder: (c){
+                                        return Container(
+                                          height: 120,
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Padding(
+                                                padding: EdgeInsets.only(top: 10, left: 10),
+                                                child: Text("¿Desea inciar la grabación?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+                                              ),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.end,
+                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                children: <Widget>[
+                                                  FlatButton(onPressed: ()=> Navigator.pop(context), child: Text("No por ahora")),
+                                                  FlatButton(onPressed: ()=> Navigator.pop(context), child: Text("Sí"))
+                                                  
+                                                ],
+                                              )
+                                            ]
+                                          )
+                                        );
+                                      }
+                                    ), 
                                     child: Text("INICIAR", style: TextStyle(color: Colors.white))
                                   ),
                                   FlatButton(
