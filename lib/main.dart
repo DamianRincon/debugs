@@ -17,9 +17,9 @@ Future<void> main() async {
   ));
 
   var dir = await getApplicationDocumentsDirectory();
-  //await Hive.initFlutter(dir.path);
-  //await Hive.openBox('app');
-  //var appBox = Hive.box("app");
+  await Hive.initFlutter(dir.path);
+  await Hive.openBox('app');
+  var appBox = Hive.box("app");
 
   runApp(
     MultiProvider(
