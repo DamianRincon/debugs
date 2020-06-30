@@ -22,7 +22,7 @@ class _CitasState extends State<Citas> {
           actions: <Widget>[
             Container(
               margin: EdgeInsets.only(top: 20, right: 10),
-              child: Text("Hoy: 26/06/2020", style: TextStyle(fontWeight: FontWeight.bold)),
+              child: Text("Hoy: 30/06/2020", style: TextStyle(fontWeight: FontWeight.bold)),
             )
           ]
         ),

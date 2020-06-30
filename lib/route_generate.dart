@@ -1,4 +1,3 @@
-import 'package:Debug/src/views/citas.dart';
 import 'package:flutter/material.dart';
 
 import 'src/views/login.dart';
@@ -8,6 +7,8 @@ import 'src/views/solicitud.dart';
 import 'src/views/prospectos.dart';
 import 'src/views/nueva_cita.dart';
 import 'src/views/main_screen.dart';
+import 'src/views/citas.dart';
+import 'src/views/clientes.dart';
 import 'src/views/nuevo_prospecto.dart';
 import 'src/views/nueva_solicitud.dart';
 
@@ -25,6 +26,7 @@ class RouteGenerate {
       case '/solicitudes' : return MaterialPageRoute(builder: (c) => Solicitud());
       case '/new_solicitud' : return MaterialPageRoute(builder: (c) => NewSolicitud());
       case '/contactos' : return MaterialPageRoute(builder: (c) => Contactos());
+      case '/clientes' : return MaterialPageRoute(builder: (c) => Clientes());
     }
   }
 }
