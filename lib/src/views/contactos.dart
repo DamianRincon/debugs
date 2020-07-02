@@ -50,44 +50,47 @@ class _ContactosState extends State<Contactos> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      height: 130,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            "Abraham Castillo",
-                              style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                            )
-                          ),
-                          SizedBox(height: 10),
-                          Text("Calificación Con reservas 1.0"),
-                          SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Image.asset("assets/whatsapp.png"),
-                                onPressed: () => launchWhatsApp(
-                                  phone: "+529611733525",
-                                  message: "Hola"
-                                )
-                              ),
-                              IconButton(
-                                icon: Icon(Icons.call, color: Colors.blue, size: 30),
-                                onPressed: () => launchPhone("9611733525")
-                              ),
-                              IconButton(
-                                icon: Icon(Icons.date_range, color: Colors.orange, size: 30),
-                                onPressed: () => Navigator.pushNamed(context, "/new_cita")
+                    child: InkWell(
+                      onTap: () => Navigator.pushNamed(context, "/detalle_contacto", arguments:"Abraham Castillo"),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        height: 130,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Abraham Castillo",
+                                style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
                               )
-                            ]
-                          )
-                        ]
-                      )
+                            ),
+                            SizedBox(height: 10),
+                            Text("Calificación Con reservas 1.0"),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Image.asset("assets/whatsapp.png"),
+                                  onPressed: () => launchWhatsApp(
+                                    phone: "+529611733525",
+                                    message: "Hola"
+                                  )
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.call, color: Colors.blue, size: 30),
+                                  onPressed: () => launchPhone("9611733525")
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.date_range, color: Colors.orange, size: 30),
+                                  onPressed: () => Navigator.pushNamed(context, "/new_cita")
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ),
                     )
                   ),
                   Card(
@@ -96,44 +99,47 @@ class _ContactosState extends State<Contactos> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      height: 130,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            "Damián Rincón C.",
-                              style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                            )
-                          ),
-                          SizedBox(height: 10),
-                          Text("Calificación Con reservas 6.2"),
-                          SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Image.asset("assets/whatsapp.png"),
-                                onPressed: () => launchWhatsApp(
-                                  phone: "+529611733525",
-                                  message: "Hola"
-                                )
-                              ),
-                              IconButton(
-                                icon: Icon(Icons.call, color: Colors.blue, size: 30),
-                                onPressed: () => launchPhone("9611733525")
-                              ),
-                              IconButton(
-                                icon: Icon(Icons.date_range, color: Colors.orange, size: 30),
-                                onPressed: () => Navigator.pushNamed(context, "/new_cita")
+                    child: InkWell(
+                      onTap: () => Navigator.pushNamed(context, "/detalle_contacto", arguments: "Damián Rincón"),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        height: 130,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Damián Rincón C.",
+                                style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
                               )
-                            ]
-                          )
-                        ]
-                      )
+                            ),
+                            SizedBox(height: 10),
+                            Text("Calificación Con reservas 6.2"),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Image.asset("assets/whatsapp.png"),
+                                  onPressed: () => launchWhatsApp(
+                                    phone: "+529611733525",
+                                    message: "Hola"
+                                  )
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.call, color: Colors.blue, size: 30),
+                                  onPressed: () => launchPhone("9611733525")
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.date_range, color: Colors.orange, size: 30),
+                                  onPressed: () => Navigator.pushNamed(context, "/new_cita")
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ),
                     )
                   )
                 ]

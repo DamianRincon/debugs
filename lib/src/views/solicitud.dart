@@ -3,6 +3,8 @@ import 'package:Debug/src/widgets/clip.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/custom_field.dart';
+
 class Solicitud extends StatefulWidget {
   Solicitud({Key key}) : super(key: key);
 
@@ -11,12 +13,55 @@ class Solicitud extends StatefulWidget {
 }
 
 class _SolicitudState extends State<Solicitud> {
+  _showMessage(){
+    showDialog(
+      context: context,
+      child: Dialog(
+        insetPadding: EdgeInsets.only(left: 10, right: 10),
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))
+        ),
+        child: Container(
+          height: 210,
+          padding: EdgeInsets.only(top: 16, right: 16, left: 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text("Ingrese el correo al que se va a enviar la solicitud:", style: TextStyle(fontSize: 18)),
+              SizedBox(height: 10),
+              CustomField(
+                label: "Correo electronico",
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  FlatButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                    ),
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    onPressed: ()=> Navigator.pop(context), 
+                    child: Text("Aceptar")
+                  )
+                ],
+              )
+            ]
+          )
+        )
+      )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     App app = Provider.of<App>(context);
     return Theme(
       data: app.theme,
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: Text("Solicitudes"),
           actions: <Widget>[
@@ -88,11 +133,11 @@ class _SolicitudState extends State<Solicitud> {
                           )
                         ),
                         Positioned(
-                          right: 50,
+                          right: 30,
                           top: 0,
                           child: IconButton(
-                            icon: Icon(Icons.email, color: Colors.lightBlue, size: 80),
-                            onPressed: (){}
+                            icon: Icon(Icons.email, color: Colors.lightBlue, size: 50),
+                            onPressed: ()=> _showMessage()
                           )
                         )
                       ]

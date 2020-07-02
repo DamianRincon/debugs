@@ -11,6 +11,41 @@ class Citas extends StatefulWidget {
 }
 
 class _CitasState extends State<Citas> {
+
+  _showMessage(){
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10)
+        )
+      ),
+      builder: (c){
+        return Container(
+          height: 120,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 10, left: 10),
+                child: Text("¿Desea inciar la grabación?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  FlatButton(onPressed: ()=> Navigator.pop(context), child: Text("No por ahora")),
+                  FlatButton(onPressed: ()=> Navigator.pop(context), child: Text("Sí"))         
+                ]
+              )
+            ]
+          )
+        );
+      }
+    );
+  }
   @override
   Widget build(BuildContext context) {
     App app = Provider.of<App>(context);
@@ -52,13 +87,16 @@ class _CitasState extends State<Citas> {
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                          right: -70,
+                          right: 20,
                           top: 10,
-                          child: Icon(Icons.mic, color: Colors.lightBlue, size: 150),
+                          child: IconButton(
+                            icon: Icon(Icons.mic, color: Colors.blue, size: 50),
+                            onPressed: ()=> _showMessage()
+                          )
                         ),
                         Positioned(
-                          right: 35,
-                          top: 35,
+                          right: 15,
+                          bottom: 15,
                           child: Text("04:30 PM", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                         ),
                         Column(
@@ -100,7 +138,7 @@ class _CitasState extends State<Citas> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 FlatButton(
-                                  onPressed: (){}, 
+                                  onPressed: ()=> _showMessage(),
                                   child: Text("INICIAR", style: TextStyle(color: Colors.blue))
                                 ),
                                 FlatButton(
@@ -121,13 +159,16 @@ class _CitasState extends State<Citas> {
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                          right: -70,
+                          right: 20,
                           top: 10,
-                          child: Icon(Icons.mic, color: Colors.lightBlue, size: 150),
+                          child: IconButton(
+                            icon: Icon(Icons.mic, color: Colors.blue, size: 50),
+                            onPressed: ()=> _showMessage()
+                          )
                         ),
                         Positioned(
-                          right: 35,
-                          top: 35,
+                          right: 15,
+                          bottom: 15,
                           child: Text("06:45 PM", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                         ),
                         Column(
@@ -169,7 +210,7 @@ class _CitasState extends State<Citas> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 FlatButton(
-                                  onPressed: (){}, 
+                                  onPressed: ()=> _showMessage(),
                                   child: Text("INICIAR", style: TextStyle(color: Colors.blue))
                                 ),
                                 FlatButton(

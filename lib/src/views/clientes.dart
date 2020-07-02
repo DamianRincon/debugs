@@ -40,7 +40,7 @@ class _ClientesState extends State<Clientes> {
           ]
         ),
         floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
+          onPressed: () => Navigator.pushNamed(context, "/poliza"),
           label: Text("Nuevo"),
           icon: Icon(Icons.add)
         ),

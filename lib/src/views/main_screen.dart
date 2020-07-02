@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
     Item("assets/citas.png","Citas","/citas"),
     Item("assets/solicitudes.png","Solicitudes","/solicitudes"),
     Item("assets/clientes.png","Clientes","/clientes"), 
-    Item("assets/monitores.png","Monitores","/monitores"),
+    Item("assets/monitores.png","Monitoreo","/monitoreo"),
     Item("assets/capacitación.png","Capacitación","/capacitacion")
   ];
 
@@ -29,12 +29,9 @@ class _MainScreenState extends State<MainScreen> {
       data: app.theme,
       child: Scaffold(
         appBar: AppBar(
-          leading: Padding(
-            padding: EdgeInsets.all(5),
-            child: CircleAvatar(
-              radius: 26,
-              backgroundImage: AssetImage("assets/funko.jpg")
-            )
+          leading: IconButton(
+            icon: Image.asset("assets/icons/velocimetro.png", width: 35, color: app.theme.iconTheme.color),
+            onPressed: ()=> Navigator.pushNamed(context, "/velocimetro")
           ),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
