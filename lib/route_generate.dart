@@ -1,5 +1,9 @@
 import 'package:Debug/src/views/capacitacion.dart';
+import 'package:Debug/src/views/faltantes.dart';
 import 'package:Debug/src/views/historial.dart';
+import 'package:Debug/src/views/metas_anuales.dart';
+import 'package:Debug/src/views/metas_semanales.dart';
+import 'package:Debug/src/views/metas_trimestrales.dart';
 import 'package:Debug/src/views/monitoreo.dart';
 import 'package:Debug/src/views/poliza.dart';
 import 'package:Debug/src/views/productos.dart';
@@ -41,6 +45,11 @@ class RouteGenerate {
       case '/productos' : return MaterialPageRoute(builder: (c) => Productos());
       case '/monitoreo' : return MaterialPageRoute(builder: (c) => Monitoreo());
       case '/velocimetro' : return MaterialPageRoute(builder: (c) => Velocimetro());
+      case '/metas_anuales' : return MaterialPageRoute(builder: (c) => MetasAnuales());
+      case '/metas_semanales' : return MaterialPageRoute(builder: (c) => MetasSemanales());
+      case '/metas_trimestrales' : return MaterialPageRoute(builder: (c) => MetasTrimestrales());
+      case '/faltantes' : return MaterialPageRoute(builder: (c) => Faltantes());
+
       default: return null;
     }
   }

@@ -38,81 +38,93 @@ class _VelocimetroState extends State<Velocimetro> {
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/4) -30,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Metas anuales", style: TextStyle(fontSize: 22))
-                      ]
-                    )
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/metas_anuales"),
+                    child: Container(
+                      height: (size.height/4) -30,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(width: 15),
+                          Text("Metas anuales", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    ),
                   )
                 ),
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/4) -30,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Resultados semanales", style: TextStyle(fontSize: 22))
-                      ]
-                    )
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/metas_semanales"),
+                    child: Container(
+                      height: (size.height/4) -30,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(width: 15),
+                          Text("Resultados semanales", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    ),
                   )
                 ),
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/4) -30,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Faltantes y\ncumplimiento", style: TextStyle(fontSize: 22))
-                      ]
-                    )
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/faltantes"),
+                    child: Container(
+                      height: (size.height/4) -30,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(width: 15),
+                          Text("Faltantes y\ncumplimiento", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    ),
                   )
                 ),
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/4) -30,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Metas trimestrales", style: TextStyle(fontSize: 22))
-                      ]
-                    )
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/metas_trimestrales"),
+                    child: Container(
+                      height: (size.height/4) -30,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(width: 15),
+                          Text("Metas trimestrales", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    ),
                   )
                 )
               ]
