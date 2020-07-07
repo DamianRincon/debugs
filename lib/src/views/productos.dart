@@ -14,14 +14,14 @@ class Productos extends StatefulWidget {
 class _ProductosState extends State<Productos> {
 
   List<Item> items = [
-    Item("assets/icons/introduccion.png","Introducción",""),
-    Item("assets/icons/produccion.png","Protección",""),
-    Item("assets/icons/ahorro.png","Ahorro",""),
-    Item("assets/icons/educacion.png","Educación",""),
-    Item("assets/icons/retiro.png","Retiro",""),
-    Item("assets/icons/proteccion-y-ahorro.png","Protección y ahorro",""),
-    Item("assets/icons/resumen.png","Resumén",""),
-    Item("assets/icons/cotizacion.png","Cotización vida individual","")
+    Item("assets/icons/introduccion.png","Introducción","/lorem"),
+    Item("assets/icons/produccion.png","Protección","/lorem"),
+    Item("assets/icons/ahorro.png","Ahorro","/lorem"),
+    Item("assets/icons/educacion.png","Educación","/lorem"),
+    Item("assets/icons/retiro.png","Retiro","/lorem"),
+    Item("assets/icons/proteccion-y-ahorro.png","Protección y ahorro","/lorem"),
+    Item("assets/icons/resumen.png","Resumén","/lorem"),
+    Item("assets/icons/cotizacion.png","Cotización vida individual","/lorem")
   ];
 
   @override

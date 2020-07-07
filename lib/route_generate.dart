@@ -2,6 +2,7 @@ import 'package:Debug/src/views/capacitacion.dart';
 import 'package:Debug/src/views/desviaciones.dart';
 import 'package:Debug/src/views/faltantes.dart';
 import 'package:Debug/src/views/historial.dart';
+import 'package:Debug/src/views/lorem.dart';
 import 'package:Debug/src/views/metas_anuales.dart';
 import 'package:Debug/src/views/metas_semanales.dart';
 import 'package:Debug/src/views/metas_trimestrales.dart';
@@ -55,6 +56,8 @@ class RouteGenerate {
       case '/valores_esperados' : return MaterialPageRoute(builder: (c) => ValoresEsperados());
       case '/resultados_semanales' : return MaterialPageRoute(builder: (c) => ResultadosSemanales());
       case '/desviaciones' : return MaterialPageRoute(builder: (c) => Desviaciones());
+      case '/lorem' : return MaterialPageRoute(builder: (c) => Lorem());
+
       default: return null;
     }
   }
