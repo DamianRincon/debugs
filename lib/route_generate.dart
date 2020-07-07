@@ -1,4 +1,5 @@
 import 'package:Debug/src/views/capacitacion.dart';
+import 'package:Debug/src/views/desviaciones.dart';
 import 'package:Debug/src/views/faltantes.dart';
 import 'package:Debug/src/views/historial.dart';
 import 'package:Debug/src/views/metas_anuales.dart';
@@ -7,6 +8,8 @@ import 'package:Debug/src/views/metas_trimestrales.dart';
 import 'package:Debug/src/views/monitoreo.dart';
 import 'package:Debug/src/views/poliza.dart';
 import 'package:Debug/src/views/productos.dart';
+import 'package:Debug/src/views/resultados_semanales.dart';
+import 'package:Debug/src/views/valores_esperados.dart';
 import 'package:Debug/src/views/velocimetro.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +52,9 @@ class RouteGenerate {
       case '/metas_semanales' : return MaterialPageRoute(builder: (c) => MetasSemanales());
       case '/metas_trimestrales' : return MaterialPageRoute(builder: (c) => MetasTrimestrales());
       case '/faltantes' : return MaterialPageRoute(builder: (c) => Faltantes());
-
+      case '/valores_esperados' : return MaterialPageRoute(builder: (c) => ValoresEsperados());
+      case '/resultados_semanales' : return MaterialPageRoute(builder: (c) => ResultadosSemanales());
+      case '/desviaciones' : return MaterialPageRoute(builder: (c) => Desviaciones());
       default: return null;
     }
   }

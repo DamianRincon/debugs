@@ -20,7 +20,7 @@ class _MonitoreoState extends State<Monitoreo> {
       data: app.theme,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Monitoreo"),
+          title: Text("Monitoreo")
         ),
         body: Stack(
           fit: StackFit.expand,
@@ -40,61 +40,70 @@ class _MonitoreoState extends State<Monitoreo> {
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/3) -45,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Valores esperados", style: TextStyle(fontSize: 22))
-                      ],
-                    ),
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/valores_esperados"),
+                    child: Container(
+                      height: (size.height/3) -45,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue
+                          ),
+                          SizedBox(width: 15),
+                          Text("Valores esperados", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    )
                   )
                 ),
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/3) -45,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Resultados semanales", style: TextStyle(fontSize: 22))
-                      ],
-                    ),
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/resultados_semanales"),
+                    child: Container(
+                      height: (size.height/3) -45,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue
+                          ),
+                          SizedBox(width: 15),
+                          Text("Resultados semanales", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    )
                   )
                 ),
                 Card(
                   elevation: 2,
                   shadowColor: Colors.lightBlue,
-                  child: Container(
-                    height: (size.height/3) -45,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(width: 15),
-                        Text("Desviaciones", style: TextStyle(fontSize: 22))
-                      ],
-                    ),
+                  child: InkWell(
+                    onTap: ()=> Navigator.pushNamed(context, "/desviaciones"),
+                    child: Container(
+                      height: (size.height/3) -45,
+                      width: size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 80,
+                            color: Colors.blue
+                          ),
+                          SizedBox(width: 15),
+                          Text("Desviaciones", style: TextStyle(fontSize: 22))
+                        ]
+                      )
+                    )
                   )
                 )
               ]

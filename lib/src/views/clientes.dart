@@ -43,7 +43,7 @@ class _ClientesState extends State<Clientes> {
           onPressed: () => Navigator.pushNamed(context, "/poliza"),
           label: Text("Nuevo"),
           icon: Icon(Icons.add)
-        ),
+        )
       )
     );
   }
